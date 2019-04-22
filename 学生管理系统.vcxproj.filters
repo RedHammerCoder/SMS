@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="define_the_head.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="newstudents.h">
       <Filter>头文件</Filter>
     </ClInclude>

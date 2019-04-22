@@ -123,7 +123,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="define_the_head.h" />
     <ClInclude Include="newstudents.h" />
     <ClInclude Include="savefile.h" />
   </ItemGroup>

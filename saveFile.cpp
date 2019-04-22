@@ -98,7 +98,7 @@ void inital( linken &hard, string NAME, string XUEHAO, tm BORNTIMR, bool SEX, in
 		printf("ptr,next==nullptr");
 		students temp(NAME, XUEHAO, BORNTIMR, SEX, CP, MATH, ENGLISH);
 		linken* linkptr = new linken(temp);
-		cout << "we new a linken &linken,next==null" << linkptr->next << linkptr->last << endl;
+		cout << "we new a linken &linken,next==null" << linkptr->next<<endl << linkptr->last << endl;
 		ptr->next = linkptr;
 		linkptr->last = ptr;
 	
@@ -159,13 +159,13 @@ bool swap(linken& left, linken& right)
 		left.last->next = &right;
 	}
 
-	if (right.last != NULL && right.last != NULL)
-	{
+	//if (right.last != NULL && right.last != NULL)
+	//{
 
-		right.next->last = &left;
+//		right.next->last = &left;
 	
-		right.last->next = &left;
-	}
+	//	right.last->next = &left;
+	//}
 	
 
 	

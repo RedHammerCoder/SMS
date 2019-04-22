@@ -2,7 +2,7 @@
 #pragma warning( disable : 4996)
 
 
-#include "define_the_head.h"
+//#include "define_the_head.h"
 #include "newstudents.h"
 #include "savefile.h"
 #include<iostream>
@@ -15,6 +15,7 @@ extern bool Savefile(linken* head);
 extern void inital(linken& ptr, string NAME, string XUEHAO, tm BORNTIMR, bool SEX, int CP, int MATH, int ENGLISH);
 extern AllScore clculate(linken);
 extern void Sort(linken*, linken*);
+extern void clear(linken&);
 
 enum input {
 
@@ -25,7 +26,9 @@ enum input {
 			CLACULATE,
 			SEARCH,
 			SORT,
-			EXIT
+			EXIT,
+			CLEAR
+			
 };
 
 linken head,prehead;
@@ -104,11 +107,11 @@ prehead.next = &head;
 		{
 
 		string nameing;
-		nameing.resize(17);
+		//nameing.resize(17);
 		cin >> nameing;
 
 		string xuehao;
-		nameing.resize(11);
+		//xuehao.resize(11);
 		cin >> xuehao;
 		//scanf("%s", &xuehao[0]);
 		int tempint0 = 0;
@@ -232,7 +235,7 @@ prehead.next = &head;
 
 			while (ptemp != NULL)
 			{
-				cout << temp.mamber.CProgram << " " << endl;
+				cout << ptemp->mamber.CProgram << " " << endl;
 				ptemp=ptemp->next;
 			}
 		}
@@ -240,6 +243,13 @@ prehead.next = &head;
 		case EXIT:
 			Savefile(&head);
 			return 0;
+		case CLEAR :
+		{
+			clear(head);
+		}
+			
+
+
 
 			
 

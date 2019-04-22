@@ -1,6 +1,8 @@
 #include <iostream>   
 #include"savefile.h"
 #include"newstudents.h"
+#include <fstream>
+using namespace std;
 
 
 AllScore clculate(linken head)
@@ -93,8 +95,8 @@ void Sort(linken *head,linken *end)//从head开始但是不可以触碰到end；保持连贯性
 	/*if (head->next == NULL) {
 		cout << "only head"; return;
 	}*/
-	
-	linken* STD = head;
+	/*
+	linken* STD = head
 	int key = STD->mamber.CProgram;
 	linken * ptr = head->next;
 	/*if (ptr == NULL)
@@ -102,7 +104,7 @@ void Sort(linken *head,linken *end)//从head开始但是不可以触碰到end；保持连贯性
 		cout << "只有单一元素" << endl;
 	
 		return;
-	}*/
+	}
 
 
 	
@@ -129,7 +131,28 @@ void Sort(linken *head,linken *end)//从head开始但是不可以触碰到end；保持连贯性
 		
 		
 	}
-	
+	*/
+
+	auto STD = head->next;
+	auto ptr = STD;
+	while (ptr->next != end)
+	{
+		auto temp = ptr;
+		if (ptr->mamber.math < STD->mamber.math)
+		{
+			qiancha(STD, ptr);
+		}
+		ptr = temp->next;
+	}
+
+
+
+
+
+
+
+
+
 
 	Sort(head, STD);
 	Sort(STD->next, end);
@@ -160,5 +183,22 @@ void SORt(linken* head, linken* end)
 
 }
 
-
+void clear(linken& head)
+{
+	auto ptr = head.next;
+	head.next = NULL;
+	while (ptr != NULL)
+	{
+		ptr = ptr->next;
+		if (ptr == NULL)return;
+		delete ptr->last;
+		ptr->last == NULL;
+	}
+	fstream open("savefiletodisk.bin", ios::binary | ios::in | ios::out | ios::trunc | ios::beg);
+	open.close();
+#if _DEBUG
+	cout << "inthedebuf" << endl;
+#endif
+	
+}
 

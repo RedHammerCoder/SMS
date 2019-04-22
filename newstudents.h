@@ -21,9 +21,9 @@ class studnets;
 	class students
 	{
 	public:
-		char name[16];
+		char name[20];
 		tm borntime ; //Äê¼Í
-		char xuehao[9];
+		char xuehao[20];
 		bool sex=0;
 		int age=0;
 		uint16_t CProgram ;

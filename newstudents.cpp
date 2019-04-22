@@ -36,18 +36,21 @@
 	bool students:: SetName(std::string name)
 	{
 		auto length = name.length();
-		if (length > 17)
+		if (length > 20)
 			return 0;
 		int ptr = 0;
 		for (char sName : name)
 		{
-			if (sName == '/0')break;
+			
 			this->name [ptr] = sName;
+
+			
 			ptr++;
 
 			
 
 		}
+		this->name[ptr] = '\0';
 		return 1;
 	}
 
@@ -91,22 +94,23 @@
 
 	bool  students::Setxuehao(std::string Xuehao) {
 		
+		auto length = Xuehao.length();
+		if (length > 20)
+			return 0;
+		int ptr = 0;
+		for (char sName : Xuehao)
 		{
-			auto length = Xuehao.length();
-			if (length > 9)
-				return 0;
-			int ptr = 0;
-			for (char sName : Xuehao)
-			{
-				if (sName == '/0')break;
-				this->xuehao[ptr] = sName;
-				ptr++;
+
+			this->xuehao[ptr] = sName;
+
+			
+			ptr++;
 
 
 
-			}
-			return 1;
 		}
+		this->xuehao[ptr] = '\0';
+		return 1;
 
 }
 
